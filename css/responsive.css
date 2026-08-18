@@ -2,8 +2,13 @@
 @media (max-width:991px){
   .hero-title{font-size:3rem}
   .hero-content{padding-top:6rem}
+  .nearby-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .property-summary{grid-template-columns:1fr}
 }
 @media (max-width:576px){
+  .hero-gallery{min-height:420px}
+  .hero-gallery .hero-sub{letter-spacing:.08em;font-size:1rem}
+  .nearby-grid{grid-template-columns:1fr}
   .hero-title{font-size:2rem}
   .hero-sub{font-size:1rem}
   .navbar .brand-text{font-size:1rem}

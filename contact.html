@@ -34,7 +34,7 @@
     </div>
   </nav>
 
-  <header class="page-hero" style="background:#204E37;color:#fff;padding:4rem 0 2rem 0">
+  <header class="page-hero hero-gallery d-flex align-items-center" style="background-image:url('images/rooms/Coorg\ contact\ bg.jpg')">
     <div class="container text-center">
       <h1 class="hero-heading">Contact</h1>
       <p class="hero-sub">Let’s plan your next nature escape.</p>
@@ -73,6 +73,29 @@
           </div>
         </div>
       </div>
+
+      <section class="nearby-section" aria-labelledby="nearby-places-title">
+        <div class="nearby-intro">
+          <span class="section-kicker">Explore around</span>
+          <h2 id="nearby-places-title" class="section-title">Nearby Places & Tourist Attractions</h2>
+          <p>Discover the waterfalls, coffee country, heritage and natural beauty of Kodagu around Omkar Homestay.</p>
+        </div>
+
+        <div class="property-summary">
+          <div class="property-summary__content">
+            <span class="property-badge">Stay at Omkar Stays</span>
+            <h3>Your base for exploring Kodagu</h3>
+            <p>Omkar Homestay is surrounded by coffee estates, forest trails and some of the most famous destinations in the district.</p>
+            <a class="btn btn-accent" href="https://maps.app.goo.gl/pZYBgLaUPf71VYva6" target="_blank" rel="noopener">View on Google Maps</a>
+          </div>
+          <div class="property-summary__meta">
+            <div><strong>📍</strong> Omkar Homestay</div>
+            <div>Kagadadal, Kodagu, Karnataka</div>
+          </div>
+        </div>
+
+        <div id="nearbyPlacesGrid" class="nearby-grid" aria-live="polite"></div>
+      </section>
     </div>
   </main>
 
@@ -84,5 +107,92 @@
   <script src="js/animations.js"></script>
   <script src="js/booking.js"></script>
   <script src="js/form-handler.js"></script>
+  <script>
+    const nearbyPlaces = [
+      {
+        name: 'Namdroling Monastery',
+        shortName: 'Golden Temple',
+        category: 'Culture & Heritage',
+        location: 'Bylakuppe • Approx. distance from Omkar Stays',
+        description: 'A famous Tibetan Buddhist monastery in Bylakuppe and one of the major attractions around Kushalnagar.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Namdroling+Monastery+Golden+Temple+Bylakuppe+Karnataka',
+        image: 'images/rooms/Namdroling Monastery.jpg'
+      },
+      {
+        name: 'Kaveri Nisargadhama',
+        shortName: 'Nature Reserve',
+        category: 'Nature',
+        location: 'Kushalnagar • Approx. distance from Omkar Stays',
+        description: 'A popular riverside nature destination surrounded by greenery on the Cauvery River.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Kaveri+Nisargadhama+Kushalnagar+Karnataka',
+        image: 'images/rooms/Kaveri Nisargadhama.jpg'
+      },
+      {
+        name: 'Dubare Elephant Camp',
+        shortName: 'Eco Tourism',
+        category: 'Eco Tourism',
+        location: 'Dubare • Approx. distance from Omkar Stays',
+        description: 'A well-known riverside eco-tourism destination associated with the Cauvery River and elephant experiences.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Dubare+Elephant+Camp+Karnataka',
+        image: 'images/rooms/Dubare-Elephant-Camp-in-Coorg (1).avif'
+      },
+      {
+        name: 'Harangi Reservoir',
+        shortName: 'Harangi Dam',
+        category: 'Scenic View',
+        location: 'Kodagu • Approx. distance from Omkar Stays',
+        description: 'A scenic reservoir near Kushalnagar, surrounded by the greenery of Kodagu.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Harangi+Dam+Karnataka',
+        image: 'images/rooms/Harangi Reservoir.jpeg'
+      },
+      {
+        name: 'Abbey Falls',
+        shortName: 'Waterfall',
+        category: 'Waterfall',
+        location: 'Madikeri • Approx. distance from Omkar Stays',
+        description: 'One of the best-known waterfalls in Kodagu, surrounded by coffee plantations and greenery.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Abbey+Falls+Madikeri+Karnataka',
+        image: 'images/rooms/m_coorg_Abbey Falls_1_l_310_465.jpg'
+      },
+      {
+        name: 'Madikeri',
+        shortName: 'Town & Heritage',
+        category: 'Heritage',
+        location: 'District headquarters • Approx. distance from Omkar Stays',
+        description: 'The main town of Kodagu, known for its heritage, local markets and classic hill-station ambience.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Madikeri+Karnataka',
+        image: 'images/rooms/Madikeri.jpg'
+      },
+      {
+        name: 'Mandalpatti View Point',
+        shortName: 'Mountain View',
+        category: 'Viewpoint',
+        location: 'Mandalpatti • Approx. distance from Omkar Stays',
+        description: 'A popular mountain viewpoint offering panoramic views of the surrounding hills and valleys.',
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=12.402748,75.769836&destination=Mandalpatti+View+Point+Madikeri+Karnataka',
+        image: 'images/rooms/mandalpatti-trek-coorg-tourism-opening-time-closing.jpg'
+      }
+    ];
+
+    const nearbyPlacesGrid = document.querySelector('#nearbyPlacesGrid');
+    if (nearbyPlacesGrid) {
+      nearbyPlacesGrid.innerHTML = nearbyPlaces.map((place) => `
+        <article class="nearby-card">
+          <div class="nearby-card__image-wrap">
+            <img src="${place.image}" alt="${place.name}" loading="lazy" decoding="async">
+          </div>
+          <div class="nearby-card__body">
+            <div class="nearby-card__topline">
+              <span class="nearby-card__tag">${place.category}</span>
+            </div>
+            <h3>${place.name}</h3>
+            <p class="nearby-card__meta">${place.location}</p>
+            <p class="nearby-card__description">${place.description}</p>
+            <a class="nearby-card__button" href="${place.mapsUrl}" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      `).join('');
+    }
+  </script>
 </body>
 </html>

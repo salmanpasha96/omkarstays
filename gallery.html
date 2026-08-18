@@ -35,11 +35,16 @@
     </div>
   </nav>
 
-  <header class="page-hero has-light-text" style="background:#f7f5ef;padding:6rem 0 2rem 0"><div class="container text-center"><h1 class="hero-heading" style="color:#1f2937">Gallery</h1><p class="hero-sub" style="color:rgba(31,41,55,.74)">Explore curated photos and drone captures.</p></div></header>
+  <header class="page-hero hero-gallery d-flex align-items-center" style="background-image:url('images/rooms/coffe.webp')">
+    <div class="container text-center">
+      <h1 class="hero-heading">Gallery</h1>
+      <p class="hero-sub">Explore curated photos and drone captures.</p>
+    </div>
+  </header>
 
   <main class="page-shell">
-    <div class="container">
-      <div class="d-flex flex-wrap gap-2 mb-4">
+    <div class="container gallery-layout">
+      <div class="gallery-filter-bar d-flex flex-wrap gap-2 mb-4">
         <button class="btn btn-outline-secondary filter-btn active" data-filter="*">All</button>
         <button class="btn btn-outline-secondary filter-btn" data-filter="rooms">Rooms</button>
         <button class="btn btn-outline-secondary filter-btn" data-filter="tents">Tents</button>
@@ -47,16 +52,16 @@
         <button class="btn btn-outline-secondary filter-btn" data-filter="nature">Nature</button>
       </div>
 
-      <div id="galleryGrid" class="row g-3 masonry">
-        <div class="col-6 col-md-4 gallery-item" data-category="rooms"><a href="images/rooms/room-01-bed-view.png"><img src="images/rooms/room-01-bed-view.png" loading="lazy" class="img-fluid rounded" alt="Room 1 bed view"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="rooms"><a href="images/rooms/room-02-double-bed.png"><img src="images/rooms/room-02-double-bed.png" loading="lazy" class="img-fluid rounded" alt="Room 2 double bed"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="rooms"><a href="images/rooms/room-03-window-view.png"><img src="images/rooms/room-03-window-view.png" loading="lazy" class="img-fluid rounded" alt="Room 3 window view"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="rooms"><a href="images/rooms/room-04-wooden-bed.png"><img src="images/rooms/room-04-wooden-bed.png" loading="lazy" class="img-fluid rounded" alt="Room 4 wooden bed"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="rooms"><a href="images/rooms/room-05-suite-view.png"><img src="images/rooms/room-05-suite-view.png" loading="lazy" class="img-fluid rounded" alt="Room 5 suite view"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="drone"><a href="images/Gemini_Generated_Image_fzu5a1fzu5a1fzu5.png"><img src="images/Gemini_Generated_Image_fzu5a1fzu5a1fzu5.png" loading="lazy" class="img-fluid rounded" alt="Drone view"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="nature"><a href="images/BONE FIRE.png"><img src="images/BONE FIRE.png" loading="lazy" class="img-fluid rounded" alt="Bone fire experience"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="nature"><a href="images/BBQ.png"><img src="images/BBQ.png" loading="lazy" class="img-fluid rounded" alt="BBQ dinner"></a></div>
-        <div class="col-6 col-md-4 gallery-item" data-category="tents"><a href="images/ChatGPT Image Aug 15, 2026, 09_44_46 PM.png"><img src="images/ChatGPT Image Aug 15, 2026, 09_44_46 PM.png" loading="lazy" class="img-fluid rounded" alt="Tent night view"></a></div>
+      <div id="galleryGrid" class="gallery-grid">
+        <div class="gallery-item" data-category="rooms"><a href="images/rooms/room-01-bed-view.png"><img src="images/rooms/room-01-bed-view.png" fetchpriority="high" decoding="async" width="1200" height="900" alt="Room 1 bed view"></a></div>
+        <div class="gallery-item" data-category="rooms"><a href="images/rooms/room-02-double-bed.png"><img src="images/rooms/room-02-double-bed.png" loading="lazy" decoding="async" width="1200" height="900" alt="Room 2 double bed"></a></div>
+        <div class="gallery-item" data-category="rooms"><a href="images/rooms/room-03-window-view.png"><img src="images/rooms/room-03-window-view.png" loading="lazy" decoding="async" width="1200" height="900" alt="Room 3 window view"></a></div>
+        <div class="gallery-item" data-category="rooms"><a href="images/rooms/room-04-wooden-bed.png"><img src="images/rooms/room-04-wooden-bed.png" loading="lazy" decoding="async" width="1200" height="900" alt="Room 4 wooden bed"></a></div>
+        <div class="gallery-item" data-category="rooms"><a href="images/rooms/room-05-suite-view.png"><img src="images/rooms/room-05-suite-view.png" loading="lazy" decoding="async" width="1200" height="900" alt="Room 5 suite view"></a></div>
+        <div class="gallery-item" data-category="drone"><a href="images/drone-view.png"><img src="images/drone-view.png" loading="lazy" decoding="async" width="1200" height="900" alt="Drone view of Omkar Stays"></a></div>
+        <div class="gallery-item" data-category="nature"><a href="images/bonfire-experience.png"><img src="images/bonfire-experience.png" loading="lazy" decoding="async" width="1200" height="900" alt="Bonfire experience at Omkar Stays"></a></div>
+        <div class="gallery-item" data-category="nature"><a href="images/bbq-dinner.png"><img src="images/bbq-dinner.png" loading="lazy" decoding="async" width="1200" height="900" alt="BBQ dinner at the resort"></a></div>
+        <div class="gallery-item" data-category="tents"><a href="images/forest-tent-night-view.png"><img src="images/forest-tent-night-view.png" loading="lazy" decoding="async" width="1200" height="900" alt="Forest tent night view"></a></div>
       </div>
     </div>
   </main>
