@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   addRevealEffects();
   animateCountNumbers();
 
-  const pageHero = document.querySelector('.page-hero, .hero-section');
-  if (pageHero) {
+  const heroMedia = document.querySelector('.hero-media');
+  if (heroMedia) {
     const onScroll = () => {
-      const offset = window.scrollY * 0.15;
-      pageHero.style.transform = `translateY(${offset}px)`;
+      const offset = Math.min(window.scrollY * 0.08, 28);
+      heroMedia.style.transform = `translate3d(0, ${offset}px, 0) scale(1.04)`;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
